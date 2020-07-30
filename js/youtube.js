@@ -17,13 +17,13 @@
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
+  function execute(ytID) {
     return gapi.client.youtube.channels.list({
       "part": [
         "snippet,contentDetails,statistics"
       ],
       "id": [
-        "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+        ytID
       ]
     })
         .then(function(response) {
