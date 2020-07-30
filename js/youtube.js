@@ -32,7 +32,7 @@
               },
               function(err) { console.error("Execute error", err); });
 
-              
+              return response;
   }
   gapi.load("client:auth2", function() {
     gapi.auth2.init({client_id: "98135616017-hrhcokbio5fupf00srliiume94s7igtl.apps.googleusercontent.com"});
