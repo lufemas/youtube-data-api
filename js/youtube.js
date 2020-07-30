@@ -17,7 +17,7 @@
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
-  function reqVideoData(ytID) {
+  async function reqVideoData(ytID) {
     return gapi.client.youtube.videos.list({
       "part": [
         "snippet,contentDetails,statistics"
@@ -31,6 +31,8 @@
                 console.log("Response", response);
               },
               function(err) { console.error("Execute error", err); });
+
+              
   }
   gapi.load("client:auth2", function() {
     gapi.auth2.init({client_id: "98135616017-hrhcokbio5fupf00srliiume94s7igtl.apps.googleusercontent.com"});

@@ -16,16 +16,18 @@ function App(){
     <div>
     <Header />
     <AddContent />
+    <SeeData />
     </div>
   );
 }
 
 ReactDOM.render(<App />, document.querySelector('#root'));
 
+const contentArr = []
 
 function AddContent(){
 
-  function handleAdd(){
+  async function handleAdd(){
     const rx = /\=(.+)\?*/
     // const rx = /a/
     const ytUrl = document.getElementById("content-url").value
@@ -36,7 +38,9 @@ function AddContent(){
 
     console.log(ytID)
 
-    reqVideoData(ytID)
+    const content = await reqVideoData(ytID)
+
+    contentArr.push( content )
   }
 
   return(
@@ -46,6 +50,22 @@ function AddContent(){
         <input type="text" id="content-url" name="content-url" value="https://www.youtube.com/watch?v=J01X-7NzozQ"/>
         <input type="button" value="Add" onClick={handleAdd}/>
       </div>
+    </div>
+  );
+}
+
+
+function SeeData(){
+
+  function handleClick(){
+    console.log(contentArr)
+  }
+
+  return(
+    <div className="jr mh-auto flex-col center mt-3">
+      
+        <input type="button" value="See content" onClick={handleClick}/>
+     
     </div>
   );
 }
