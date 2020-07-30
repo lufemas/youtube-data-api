@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>youtube-data-api</title>
+		<meta name="description" content="youtube-data-api">
+		<meta name="author" content="lufemas">
+		<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/jr.css">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<div id="root"></div>
+
+		<button onclick="authenticate().then(loadClient)">authorize and load</button>
+		<button onclick="execute()">execute</button>
+
+		<script src="https://apis.google.com/js/api.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script src="js/youtube.js"></script>
+		<script type="text/babel" src="js/index.js"></script>
+	</body>
+</html>
