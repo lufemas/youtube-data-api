@@ -17,8 +17,8 @@
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute(ytID) {
-    return gapi.client.youtube.channels.list({
+  function reqVideoData(ytID) {
+    return gapi.client.youtube.videos.list({
       "part": [
         "snippet,contentDetails,statistics"
       ],
